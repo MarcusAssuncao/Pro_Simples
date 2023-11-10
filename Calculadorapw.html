@@ -1,0 +1,256 @@
+<!doctype HTML>
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+        <meta name="author" content="2A DS"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+		
+            
+            form
+            {
+			    background-color :rgb (0,139,139);
+                color: (0,0,0);
+                font-family: lucida console ;			
+                width:40%;
+                margin-left:30%;
+				margin-top:10%;
+				border:2px solid rgb(0,0,0);
+            }
+
+            h3
+            {
+                text-align:center;	
+				font-family : Monotype Corsiva;	
+				font-size:170%;
+							
+            }
+
+            label
+            {
+                margin-left:13%;
+            }
+
+            input[type=button]    
+            {
+                margin-left:14%;
+                margin-right:5%;				
+				width:25%;
+				padding: 6px 16px;
+            }
+
+            textarea
+            {
+                resize:none;
+                margin-left:15.5%;
+            }
+			
+			input[type=reset] 
+			{
+                margin-left:39%;			
+				width:23%;
+				padding: 6px 16px;
+            }
+			
+			
+        </style>
+		
+        <script language="JavaScript">
+			function Adição()
+			{
+				var prime=document.getElementById("num1").value;
+				var segun=document.getElementById("num2").value;
+				var result;
+				
+				if(isNaN(prime))
+					{
+						alert("Digite somente valores numéricos para o primeiro valor!");
+						document.getElementById("num1").value="";
+						document.getElementById("num1").focus();
+					}
+				else if(isNaN(segun)) 
+					{
+						alert("Digite somente valores numéricos para o segundo valor!");
+						document.getElementById("num2").value="";
+						document.getElementById("num2").focus(); 
+					}
+				else   //executa esse bloco SE NENHUMA das instruções anteriores forem verdadeiras
+                    {
+                        prime=parseFloat(prime);
+                        segun=parseFloat(segun);
+						result= parseInt(+prime) + parseInt(+segun);
+                        document.getElementById("resultado").value=result;  
+                    }
+			}
+			
+			function Subtração()
+			{
+				var prime=document.getElementById("num1").value;
+				var segun=document.getElementById("num2").value;
+				var result;
+				
+				if(isNaN(prime))
+					{
+						alert("Digite somente valores numéricos para o primeiro valor!");
+						document.getElementById("num1").value="";
+						document.getElementById("num1").focus();
+					}
+				else if(isNaN(segun)) 
+					{
+						alert("Digite somente valores numéricos para o segundo valor!");
+						document.getElementById("num2").value="";
+						document.getElementById("num2").focus(); 
+					}
+				else   //executa esse bloco SE NENHUMA das instruções anteriores forem verdadeiras
+                    {
+                        prime=parseFloat(prime);
+                        segun=parseFloat(segun);
+						result= parseInt(+prime) - parseInt(+segun);
+                        document.getElementById("resultado").value=result;  
+                    }
+			}
+			
+			function Multiplicação()
+			{
+				var prime=document.getElementById("num1").value;
+				var segun=document.getElementById("num2").value;
+				var result;
+				
+				if(isNaN(prime))
+					{
+						alert("Digite somente valores numéricos para o primeiro valor!");
+						document.getElementById("num1").value="";
+						document.getElementById("num1").focus();
+					}
+				else if(isNaN(segun)) 
+					{
+						alert("Digite somente valores numéricos para o segundo valor!");
+						document.getElementById("num2").value="";
+						document.getElementById("num2").focus(); 
+					}
+				else   //executa esse bloco SE NENHUMA das instruções anteriores forem verdadeiras
+                    {
+                        prime=parseFloat(prime);
+                        segun=parseFloat(segun);
+						result= parseInt(+prime) * parseInt(+segun);
+                        document.getElementById("resultado").value=result;  
+                    }
+			}
+			
+			function Divisão()
+			{
+				var prime=document.getElementById("num1").value;
+				var segun=document.getElementById("num2").value;
+				var result;
+				
+				if(isNaN(prime))
+					{
+						alert("Digite somente valores numéricos para o primeiro valor!");
+						document.getElementById("num1").value="";
+						document.getElementById("num1").focus();
+					}
+				else if(isNaN(segun)) 
+					{
+						alert("Digite somente valores numéricos para o segundo valor!");
+						document.getElementById("num2").value="";
+						document.getElementById("num2").focus(); 
+					}
+				else   //executa esse bloco SE NENHUMA das instruções anteriores forem verdadeiras
+                    {
+                        prime=parseFloat(prime);
+                        segun=parseFloat(segun);
+						result= parseInt(+prime) / parseInt(+segun);
+                        document.getElementById("resultado").value=result;  
+                    }
+			}
+			
+			function Exponenciação()
+			{
+				var prime=document.getElementById("num1").value;
+				var segun=document.getElementById("num2").value;
+				var result;
+				
+				if(isNaN(prime))
+					{
+						alert("Digite somente valores numéricos para o primeiro valor!");
+						document.getElementById("num1").value="";
+						document.getElementById("num1").focus();
+					}
+				else if(isNaN(segun)) 
+					{
+						alert("Digite somente valores numéricos para o segundo valor!");
+						document.getElementById("num2").value="";
+						document.getElementById("num2").focus(); 
+					}
+				else   //executa esse bloco SE NENHUMA das instruções anteriores forem verdadeiras
+                    {
+                        prime=parseFloat(prime);
+                        segun=parseFloat(segun);
+						result= parseInt(+prime) ** parseInt(+segun);
+                        document.getElementById("resultado").value=result;  
+                    }
+			}
+			
+			function Raiz()
+			{
+				var prime=document.getElementById("num1").value;
+				var segun=document.getElementById("num2").value;
+				var result;
+				
+				if(isNaN(prime))
+					{
+						alert("Digite somente valores numéricos para o primeiro valor!");
+						document.getElementById("num1").value="";
+						document.getElementById("num1").focus();
+					}
+				else if(isNaN(segun)) 
+					{
+						alert("Digite somente valores numéricos para o segundo valor!");
+						document.getElementById("num2").value="";
+						document.getElementById("num2").focus(); 
+					}
+				else   //executa esse bloco SE NENHUMA das instruções anteriores forem verdadeiras
+                    {
+                        prime=parseFloat(prime);
+                        segun=parseFloat(segun);
+						result= Math.pow(prime, segun);
+                        document.getElementById("resultado").value=result;  
+                    }
+				
+			}
+            
+            function Limpar()
+            {
+                document.getElementById("num1").focus();
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <h3> Calculadora </h3>
+            <label for="num1">Informe um valor:&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="num1"/>
+			<br/><br/>
+           <label for="num2"> Informe um valor:&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="num2"/>
+			<br/><br/><br>
+            <label for="resultado">O resultado é:&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="resultado" readonly/><br/><br/><br>
+			
+            <input type="button" value="Adição" onClick="Adição()"/>&nbsp;  
+            <input type="button" value="Raiz quadrada" onClick="Raiz()"/>&nbsp;
+			
+			<br><br>
+            <input type="button" value="Subtração" onClick="Subtração()"/>&nbsp;
+            <input type="button" value="Divisão" onClick="Divisão()"/>&nbsp;
+			<br/><br/>
+            <input type="button" value="Exponenciação" onClick="Exponenciação()"/>&nbsp;
+			<input type="button" value="Multiplicação" onClick="Multiplicação()"/>&nbsp;
+			<br> <br>
+			
+            <input type="reset" value="Limpar" onClick="Limpar()"/>
+			
+			<br> <br> <br>
+
+        </form>
+    </body>
