@@ -1,0 +1,280 @@
+ <!doctype HTML>
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+        <meta name="author" content="2A DS"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+             body 
+            {
+                 background-color:rgb(1,1,1);
+            }
+            
+            form    
+            {
+                background-color:#FFFFFF;
+                font-family: Gabriola;
+                font-size: 175%;            
+                width:42%;
+                height: 602px;
+                margin-left:28%;
+                margin-top: 02%;
+                border:solid;
+                border-color: rgb(255,255,255);
+                border-radius:20px; 
+                box-shadow:0 0 1em white;
+            }
+
+            h3 
+            {
+                color: rgb(148,0,211);
+                text-align:center;  
+                font-family : Monotype Corsiva; 
+                font-size:115%;          
+            }
+
+            label
+            {
+                margin-left:10%;
+            }
+
+            input[type=text]
+            { 
+                padding: 6px 16px;
+                border-color: rgb(148,0,211);
+                font-family: lucida console;
+                font-weight: bold;
+ 
+            }
+
+            input[type=button]    
+            {
+                margin-left:14%;
+                margin-right:5%;                
+                width:25%;
+                padding: 10px 20px;
+                margin-top: 1%;  
+                border-radius: 10px; 
+                border-color: rgb(148,0,211);
+
+            }
+
+             input[type=reset] 
+
+            {
+                margin-left:14%;
+                margin-right:5%;                
+                width:25%;
+                padding: 10px 20px;
+                margin-top: 1%;  
+                border-radius: 10px; 
+                border-color: rgb(148,0,211);
+            }
+
+         #limpar:hover 
+        {
+            font-size: 0.8em; 
+            font-family:Ebrima;
+            transition-timing-function: ease-in-out;
+        }
+
+        #calcular:hover 
+        {
+            font-size: 0.8em;
+            font-family:Ebrima;
+            transition-timing-function: ease-in-out;
+        }
+
+         </style>
+        <script language="JavaScript">
+        
+            function verificar_dia()
+            {
+                var dia = document.getElementById("txtdia").value;
+                if (isNaN(dia))
+                {
+                    window.alert("Por favor, verifique o texto escrito em dia");
+                    location.reload();
+                }
+                else
+                {
+                    dia = parseInt(dia);
+                    if ((dia < 1) || (dia > 31))
+                    {
+                        window.alert("Por favor, verifique o texto escrito em dia. Digite apenas números.");
+                        location.reload();
+                    }             
+                }
+            }
+
+
+            function verificar_mes()
+            {
+                var mes = document.getElementById("txtmes").value;
+                if (isNaN(mes))
+                {
+                    window.alert("Por favor, verifique o texto escrito em mes. Digite apenas números.");
+                    location.reload();
+                }
+                else
+                {
+                    mes = parseInt(mes);
+                    if ((mes < 1) || (mes > 12))
+                    {
+                        window.alert("Por favor, verifique o texto escrito em mes");
+                        location.reload();
+                    }
+                }
+            }
+            
+            function verificar_ano()
+            {
+                var ano = document.getElementById("txtano").value;
+                if (isNaN(ano))
+                {
+                    window.alert("Por favor, verifique o texto escrito em ano. Digite apenas números.");
+                    location.reload();
+                }
+                else if(ano.length > 4)
+                {
+                    window.alert("Por favor, Digite quatro números no ano.");
+                    location.reload();
+                }
+            }
+        
+            
+            function Confirmar()
+            {
+
+             var d_ani = parseInt(document.getElementById("txtdia").value);
+             var m_ani = parseInt(document.getElementById("txtmes").value);
+             var a_ani = parseInt(document.getElementById("txtano").value);
+
+            var hoje = new Date();
+
+            var d_hoje = hoje.getDate();
+            var m_hoje = hoje.getMonth()+1;
+            var a_hoje = hoje.getFullYear();
+            
+               hoje.setDate(d_ani);
+               hoje.setMonth(m_ani-1);
+               hoje.setFullYear(a_ani);
+
+               var idade = a_hoje - a_ani; 
+               if (m_ani > m_hoje) 
+                  idade = idade - 1 ;
+
+               else if ((m_ani == m_hoje) && (d_ani > d_hoje)) 
+                  idade = idade - 1 ;
+
+               document.getElementById("txtidade").value=idade;
+
+               var diaSemana = new Array();
+               diaSemana [0] = "em um domingo";
+               diaSemana [1] = "em uma segunda-feira";
+               diaSemana [2] = "em uma terça-feira";
+               diaSemana [3] = "em uma quarta-feira";
+               diaSemana [4] = "em uma quinta-feira"; 
+               diaSemana [5] = "em uma sexta-feira";
+               diaSemana [6] = "em um sábado";
+
+               var nomeMes= new Array();
+               nomeMes [0] = "Janeiro";
+               nomeMes [1] = "Fevereiro";
+               nomeMes [2] = "Março";
+               nomeMes [3] = "Abril";
+               nomeMes [4] = "Maio";
+               nomeMes [5] = "Junho";
+               nomeMes [6] = "Julho";
+               nomeMes [7] = "Agosto";
+               nomeMes [8] = "Setembro";
+               nomeMes [9] = "Outubro";
+               nomeMes [10] = "Novembro";
+               nomeMes [11] = "Dezembro";
+
+               document.getElementById("txdsemana").value = diaSemana[hoje.getDay()];
+               document.getElementById("txtmesn").value = nomeMes[m_ani-1];
+
+
+               if ((d_ani >= 21 && m_ani == 3) || (d_ani<= 20 && m_ani== 4)) {
+                document.getElementById("txtsigno").value = "Aries"
+                } else if ((d_ani >= 21 && m_ani== 4) || (d_ani <= 20 && m_ani == 5)) {
+                    document.getElementById("txtsigno").value = "Touro"
+
+                } else if ((d_ani >= 21 && m_ani == 5) || (d_ani<= 20 && m_ani == 6)) {
+                    document.getElementById("txtsigno").value = "Gemeos"
+                }
+                else if ((d_ani >= 21 && m_ani == 6) || (d_ani <= 22 && m_ani == 7)) {
+                    document.getElementById("txtsigno").value = "Câncer"
+                }
+                else if ((d_ani >= 23 && m_ani == 7) || (d_ani <= 22 && m_ani== 8)) {
+                    document.getElementById("txtsigno").value = "Leão"
+                }
+                else if ((d_ani >= 23 && m_ani == 8) || (d_ani <= 22 && m_ani == 9)) {
+                    document.getElementById("txtsigno").value = "Virgem"
+                }
+                else if ((d_ani >= 23 && m_ani == 9) || (d_ani <= 22 && m_ani == 10)) {
+                    document.getElementById("txtsigno").value = "Libra"
+                }
+                else if ((d_ani >= 23 && m_ani == 10) || (d_ani <= 21 && m_ani== 11)) {
+                    document.getElementById("txtsigno").value = "Escorpião"
+                }
+                else if ((d_ani >= 22 && m_ani == 11) || (d_ani<= 21 && m_ani == 12)) {
+                    document.getElementById("txtsigno").value = "Sagitário"
+                }
+                else if ((d_ani >= 22 && m_ani == 12) || (d_ani <= 19 && m_ani == 1)) {
+                    document.getElementById("txtsigno").value = "Capricórnio"
+                }
+                else if ((d_ani >= 20 && m_ani == 1) || (d_ani<= 18 && m_ani == 2)) {
+                    document.getElementById("txtsigno").value = "Aquário"
+                }
+                else {
+                    document.getElementById("txtsigno").value = "Peixes"
+                }
+            }
+                   
+            function Cancelar()
+            {
+                document.getElementById("txtdia").focus();
+            }
+            
+        </script>
+    </head>
+    <body>
+          <form>
+                <h3> O dia em que eu nasci </h3>
+
+            <label for="txtdia">Informe o dia em que nasceu:&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="txtdia"  onBlur="verificar_dia()" autofocus/> 
+
+            <label for="txtmes">Informe o mês em que nasceu:&nbsp;&nbsp;</label>
+            <input type="text" id="txtmes" onBlur="verificar_mes()" /> 
+            <br/>
+
+            <label for="txtano">Informe o ano em que nasceu:&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="txtano"  onBlur="verificar_ano()" /><br/><br/> 
+
+            <label for="txtidade">Sua idade é: &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="txtidade"  disabled/>
+            <br/>
+
+            <label for="txtmesn">Seu mês de nascimento:&emsp;&emsp;&nbsp;&nbsp;</label>
+            <input type="text" id="txtmesn"disabled/>
+            <br/>
+
+             <label for="txtsemana">Você nasceu em: &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="txdsemana"  disabled/>
+            <br/>
+
+            <label for="txtsigno">Sob o signo de: &emsp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input type="text" id="txtsigno"  disabled/>
+            <br/> <br/>
+            
+            <input type="button" value="Confirmar" onClick="Confirmar()"/>&nbsp;  
+            
+            <input type="reset" value="Limpar" onClick="Cancelar()"/>
+            <br/>
+            <br/>
+</form>
+    </body>
